@@ -1,0 +1,34 @@
+table DimEducationLevel
+	lineageTag: 1d774d18-c6c6-4961-95e9-276efd32751e
+
+	column EducationLevelID
+		dataType: int64
+		formatString: 0
+		lineageTag: 8156e0e0-118e-4337-a627-eab7cba2ab15
+		summarizeBy: none
+		sourceColumn: EducationLevelID
+
+		annotation SummarizationSetBy = Automatic
+
+	column EducationLevel
+		dataType: string
+		lineageTag: cd194da2-1d10-4ec2-978f-0feb77ee88fd
+		summarizeBy: none
+		sourceColumn: EducationLevel
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimEducationLevel = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\tulio\Documents\Power BI Desktop\case-study-hr-analytics-in-power-bi\Datasets\EducationLevel.csv"),[Delimiter=",", Columns=2, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"EducationLevelID", Int64.Type}, {"EducationLevel", type text}})
+				in
+				    #"Changed Type"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

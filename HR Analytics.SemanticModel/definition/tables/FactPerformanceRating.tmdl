@@ -1,0 +1,118 @@
+table FactPerformanceRating
+	lineageTag: c09b9c71-ba36-42f0-b79d-9c9f74cd29f7
+
+	column PerformanceID
+		dataType: string
+		lineageTag: 82137840-0367-4976-8fcb-76e959fb179b
+		summarizeBy: none
+		sourceColumn: PerformanceID
+
+		annotation SummarizationSetBy = Automatic
+
+	column EmployeeID
+		dataType: string
+		lineageTag: 5b55b2d0-3cc2-4e93-936d-424b15da0e6e
+		summarizeBy: none
+		sourceColumn: EmployeeID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReviewDate
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: a2e9b032-0bcd-44c1-8dd0-f5711c700e71
+		summarizeBy: none
+		sourceColumn: ReviewDate
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column EnvironmentSatisfaction
+		dataType: int64
+		formatString: 0
+		lineageTag: 68612c7f-6b6c-4393-aad6-973d93d01e47
+		summarizeBy: sum
+		sourceColumn: EnvironmentSatisfaction
+
+		annotation SummarizationSetBy = User
+
+	column JobSatisfaction
+		dataType: int64
+		formatString: 0
+		lineageTag: 181f6e72-dafd-4180-a824-6bd835b506ec
+		summarizeBy: sum
+		sourceColumn: JobSatisfaction
+
+		annotation SummarizationSetBy = Automatic
+
+	column RelationshipSatisfaction
+		dataType: int64
+		formatString: 0
+		lineageTag: 3556cb1c-d998-4a93-a6e4-a166a4659739
+		summarizeBy: sum
+		sourceColumn: RelationshipSatisfaction
+
+		annotation SummarizationSetBy = Automatic
+
+	column TrainingOpportunitiesWithinYear
+		dataType: int64
+		formatString: 0
+		lineageTag: ba91e3c8-ef02-446f-8930-74cd7f9ef44d
+		summarizeBy: sum
+		sourceColumn: TrainingOpportunitiesWithinYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column TrainingOpportunitiesTaken
+		dataType: int64
+		formatString: 0
+		lineageTag: 4eb56359-e1eb-4a1d-b6ff-544681286949
+		summarizeBy: sum
+		sourceColumn: TrainingOpportunitiesTaken
+
+		annotation SummarizationSetBy = Automatic
+
+	column WorkLifeBalance
+		dataType: int64
+		formatString: 0
+		lineageTag: 41105867-0ca2-402f-85f0-53a9322f3d8b
+		summarizeBy: sum
+		sourceColumn: WorkLifeBalance
+
+		annotation SummarizationSetBy = Automatic
+
+	column SelfRating
+		dataType: int64
+		formatString: 0
+		lineageTag: 9106039e-9cf4-4fed-92b1-5a379bfc5f2a
+		summarizeBy: none
+		sourceColumn: SelfRating
+
+		annotation SummarizationSetBy = Automatic
+
+	column ManagerRating
+		dataType: int64
+		formatString: 0
+		lineageTag: 87682eb1-14d4-4742-ab90-a9691d9bbe5c
+		summarizeBy: sum
+		sourceColumn: ManagerRating
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactPerformanceRating = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\tulio\Documents\Power BI Desktop\case-study-hr-analytics-in-power-bi\Datasets\PerformanceRating.csv"),[Delimiter=",", Columns=11, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"PerformanceID", type text}, {"EmployeeID", type text}, {"ReviewDate", type text}, {"EnvironmentSatisfaction", Int64.Type}, {"JobSatisfaction", Int64.Type}, {"RelationshipSatisfaction", Int64.Type}, {"TrainingOpportunitiesWithinYear", Int64.Type}, {"TrainingOpportunitiesTaken", Int64.Type}, {"WorkLifeBalance", Int64.Type}, {"SelfRating", Int64.Type}, {"ManagerRating", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

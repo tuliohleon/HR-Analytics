@@ -1,0 +1,45 @@
+relationship AutoDetected_deac0f63-f484-4d40-8719-538342178831
+	fromColumn: FactPerformanceRating.EmployeeID
+	toColumn: DimEmployee.EmployeeID
+
+relationship ca3604cc-efa4-0728-1f4f-1ab4bbdfe4d5
+	fromColumn: FactPerformanceRating.ReviewDate
+	toColumn: DimDate.Date
+
+relationship 9e134a32-97c2-be43-f6e3-b13fce6e8f47
+	isActive: false
+	fromColumn: DimEmployee.HireDate
+	toColumn: DimDate.Date
+
+relationship 57fd6514-95c4-bfab-e2ae-0453b626242b
+	fromColumn: DimEmployee.Education
+	toColumn: DimEducationLevel.EducationLevel
+
+relationship 8a240182-5751-1eaa-4880-a9cb482260a4
+	fromColumn: FactPerformanceRating.EnvironmentSatisfaction
+	toColumn: DimSatisfiedLevel.SatisfactionID
+
+relationship e0e26e73-5daa-d2d5-e2d3-8661524b323d
+	isActive: false
+	fromColumn: FactPerformanceRating.JobSatisfaction
+	toColumn: DimSatisfiedLevel.SatisfactionID
+
+relationship 304f3c01-9bc4-fa73-14f6-e8b8239bbec7
+	isActive: false
+	fromColumn: FactPerformanceRating.RelationshipSatisfaction
+	toColumn: DimSatisfiedLevel.SatisfactionID
+
+relationship 6817d108-e851-1341-d301-68a3c2a1808e
+	isActive: false
+	fromColumn: FactPerformanceRating.WorkLifeBalance
+	toColumn: DimSatisfiedLevel.SatisfactionID
+
+relationship 42c95600-727f-7071-ae88-56f21520c357
+	fromColumn: FactPerformanceRating.SelfRating
+	toColumn: DimRatingLevel.RatingID
+
+relationship 7935c430-87a4-9bf0-5ab6-bde0f2c9d910
+	isActive: false
+	fromColumn: FactPerformanceRating.ManagerRating
+	toColumn: DimRatingLevel.RatingID
+
