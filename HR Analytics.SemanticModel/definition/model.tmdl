@@ -18,6 +18,17 @@ ref table FactPerformanceRating
 ref table DimRatingLevel
 ref table DimSatisfiedLevel
 ref table DimDate
+ref table _Measures
+ref table DateTableTemplate_ddc907c4-1785-4f06-a54f-35d9d7cd3332
+ref table LocalDateTable_49d385e9-28a7-4694-a1d9-73a5fdc7f182
+ref table LocalDateTable_0a27dca3-b8dd-4efa-82dc-d1848ef900f9
+ref table LocalDateTable_6158437b-698a-481d-9bf8-bc2eb06ee3d9
+ref table LocalDateTable_85ff4a5c-8f74-481b-9300-4f799a250770
+ref table LocalDateTable_a01ee5e0-b4f7-4e76-83e9-582f7060ad8d
+ref table LocalDateTable_a59eebef-0d9e-46ca-b351-bb5e8a338fa1
+ref table LocalDateTable_dff6e174-616f-4fab-8bb1-4578b9992dfa
+ref table LocalDateTable_f92eb587-41da-4285-8e30-a4559b6fc1a8
+ref table LocalDateTable_c6f3daa4-710d-4622-8295-b20ed3eeaaea
 
 ref cultureInfo en-US
 

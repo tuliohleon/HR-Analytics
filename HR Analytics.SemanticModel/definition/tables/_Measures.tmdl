@@ -1,0 +1,34 @@
+table _Measures
+	lineageTag: b70fb10b-87cc-4cf9-9c8c-614fb0669d5c
+
+	measure TotalEmployees = COUNTA(DimEmployee[EmployeeID])
+		formatString: 0
+		lineageTag: 9ba849b6-f9d0-41e2-8c1c-49d43357d0c3
+
+	measure ActiveEmployees = CALCULATE(COUNT(DimEmployee[Attrition]),DimEmployee[Attrition]="No")
+		formatString: 0
+		lineageTag: 1c570435-f2c9-486a-8cad-d7692587ed0c
+
+	measure InactiveEmployees = CALCULATE(COUNT(DimEmployee[Attrition]),DimEmployee[Attrition]="Yes")
+		formatString: 0
+		lineageTag: 6e9bf5cc-892c-4157-a18e-a31f7ad2be5e
+
+	measure '% Attrition Rate' = [InactiveEmployees]/[TotalEmployees]
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		lineageTag: 2092ae71-3b2b-413b-b8c4-d31d1688d573
+
+	column Column
+		formatString: 0
+		lineageTag: 21e298f0-3dfb-474d-bcde-082c73fd4470
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _Measures = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = 52cf6400594b403ba84dfc3ae3f28746
+

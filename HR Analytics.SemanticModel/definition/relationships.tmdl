@@ -43,3 +43,48 @@ relationship 7935c430-87a4-9bf0-5ab6-bde0f2c9d910
 	fromColumn: FactPerformanceRating.ManagerRating
 	toColumn: DimRatingLevel.RatingID
 
+relationship 60a7765c-99ca-4629-b3b1-07fe4504cc16
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DimDate.Date
+	toColumn: LocalDateTable_49d385e9-28a7-4694-a1d9-73a5fdc7f182.Date
+
+relationship a847ee31-8a86-4240-a1d3-e7b9548be299
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DimDate.'Year Start'
+	toColumn: LocalDateTable_0a27dca3-b8dd-4efa-82dc-d1848ef900f9.Date
+
+relationship e25aae0b-0dd9-4988-868e-1e99153bead4
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DimDate.YearEnd
+	toColumn: LocalDateTable_6158437b-698a-481d-9bf8-bc2eb06ee3d9.Date
+
+relationship 33962559-ab0b-47ba-b4df-6e7e84b1cde6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DimDate.MonthStart
+	toColumn: LocalDateTable_85ff4a5c-8f74-481b-9300-4f799a250770.Date
+
+relationship 6b38391f-9156-4fe4-a7b5-df6f16e71998
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DimDate.MonthEnd
+	toColumn: LocalDateTable_a01ee5e0-b4f7-4e76-83e9-582f7060ad8d.Date
+
+relationship 995d0fb8-d6bd-4da6-9fc3-0691c9231f0a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DimDate.QuarterStart
+	toColumn: LocalDateTable_a59eebef-0d9e-46ca-b351-bb5e8a338fa1.Date
+
+relationship fb32b734-6614-463d-9fea-02091b2da66b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DimDate.QuarterEnd
+	toColumn: LocalDateTable_dff6e174-616f-4fab-8bb1-4578b9992dfa.Date
+
+relationship bb35f3e8-a5cf-44e5-af35-cb84fc02af7d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DimDate.WeekStart
+	toColumn: LocalDateTable_f92eb587-41da-4285-8e30-a4559b6fc1a8.Date
+
+relationship b5f4a4ce-bfee-4d6a-978b-1c7a84e43432
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DimDate.WeekEnd
+	toColumn: LocalDateTable_c6f3daa4-710d-4622-8295-b20ed3eeaaea.Date
+
