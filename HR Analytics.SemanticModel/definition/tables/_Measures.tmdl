@@ -17,6 +17,18 @@ table _Measures
 		formatString: 0.0\ %;-0.0\ %;0.0\ %
 		lineageTag: 2092ae71-3b2b-413b-b8c4-d31d1688d573
 
+	measure TotalEmployeesDate = CALCULATE([TotalEmployees],USERELATIONSHIP(DimEmployee[HireDate], DimDate[Date]))
+		formatString: 0
+		lineageTag: 726bdc05-9797-4b34-a2a6-dd3f5d9eeb61
+
+	measure 'Youngest Employee' = min(DimEmployee[Age])
+		formatString: 0
+		lineageTag: fca37c94-6c2b-4e9a-ab31-79eb022118d4
+
+	measure 'Oldest Employee' = max(DimEmployee[Age])
+		formatString: 0
+		lineageTag: d94b3a35-949d-444e-af28-242b79353423
+
 	column Column
 		formatString: 0
 		lineageTag: 21e298f0-3dfb-474d-bcde-082c73fd4470

@@ -1,19 +1,38 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
-  "name": "f17fdf3e24d17a575188",
+  "name": "d7fdf0113fe23effc27d",
   "position": {
-    "x": 0,
-    "y": 77,
-    "z": 1,
-    "height": 74,
-    "width": 135,
-    "tabOrder": 1
+    "x": 201.66666666666669,
+    "y": 316.66666666666669,
+    "z": 5,
+    "height": 298.33333333333337,
+    "width": 481.66666666666669,
+    "tabOrder": 5
   },
   "visual": {
-    "visualType": "card",
+    "visualType": "clusteredBarChart",
     "query": {
       "queryState": {
-        "Values": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimEmployee"
+                    }
+                  },
+                  "Property": "Department"
+                }
+              },
+              "queryRef": "DimEmployee.Department",
+              "nativeQueryRef": "Department",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
           "projections": [
             {
               "field": {
@@ -51,24 +70,21 @@
         "isDefaultSort": true
       }
     },
-    "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "49cee46201b542155841",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Active Employees by Department'"
+                }
               }
-            },
-            "Property": "ActiveEmployees"
+            }
           }
-        },
-        "type": "Advanced"
-      }
-    ]
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
   }
 }

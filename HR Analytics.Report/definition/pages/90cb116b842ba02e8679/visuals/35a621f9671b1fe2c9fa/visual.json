@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
-  "name": "c71b1fa9c425c57a1a32",
+  "name": "35a621f9671b1fe2c9fa",
   "position": {
     "x": 0,
-    "y": 232,
-    "z": 3,
-    "height": 85,
-    "width": 106,
-    "tabOrder": 3
+    "y": 83.856613102595787,
+    "z": 1,
+    "height": 85.438813349814581,
+    "width": 148.72682323856611,
+    "tabOrder": 1
   },
   "visual": {
     "visualType": "card",
@@ -23,11 +23,11 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "% Attrition Rate"
+                  "Property": "Youngest Employee"
                 }
               },
-              "queryRef": "_Measures.% Attrition Rate",
-              "nativeQueryRef": "% Attrition Rate"
+              "queryRef": "_Measures.Youngest Employee",
+              "nativeQueryRef": "Youngest Employee"
             }
           ]
         }
@@ -42,7 +42,7 @@
                     "Entity": "_Measures"
                   }
                 },
-                "Property": "% Attrition Rate"
+                "Property": "Youngest Employee"
               }
             },
             "direction": "Descending"
@@ -52,23 +52,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "b1c3f3fb4f29c662bc16",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "% Attrition Rate"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }
