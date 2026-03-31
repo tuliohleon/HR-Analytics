@@ -29,6 +29,10 @@ table _Measures
 		formatString: 0
 		lineageTag: d94b3a35-949d-444e-af28-242b79353423
 
+	measure AverageSalary = AVERAGE(DimEmployee[Salary])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 9b9d1c4d-25e2-41c8-9d94-5e33594ae995
+
 	column Column
 		formatString: 0
 		lineageTag: 21e298f0-3dfb-474d-bcde-082c73fd4470

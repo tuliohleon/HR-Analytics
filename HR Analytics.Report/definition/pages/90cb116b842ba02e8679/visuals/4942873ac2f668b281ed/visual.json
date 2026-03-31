@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "4942873ac2f668b281ed",
   "position": {
-    "x": 170.87762669962916,
-    "y": 0,
+    "x": 0,
+    "y": 86.666666666666671,
     "z": 2,
-    "height": 327.51545117428924,
-    "width": 751.54511742892453,
+    "height": 298.33333333333337,
+    "width": 365,
     "tabOrder": 2
   },
   "visual": {
@@ -85,5 +85,37 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "5d5a47ec83dd53bf4bec",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DimEmployee"
+              }
+            },
+            "Property": "AgeBins"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f2dd1b112ee036b042b4",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "TotalEmployees"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

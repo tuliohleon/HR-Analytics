@@ -1,16 +1,16 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
-  "name": "c737dcf73467c8f71d44",
+  "name": "e64654bba55794c954ce",
   "position": {
     "x": 365,
-    "y": 83.333333333333343,
-    "z": 3,
-    "height": 298.33333333333337,
-    "width": 393.33333333333337,
-    "tabOrder": 3
+    "y": 395,
+    "z": 5,
+    "height": 297.5,
+    "width": 601.25,
+    "tabOrder": 5
   },
   "visual": {
-    "visualType": "hundredPercentStackedColumnChart",
+    "visualType": "lineStackedColumnComboChart",
     "query": {
       "queryState": {
         "Category": {
@@ -23,30 +23,12 @@
                       "Entity": "DimEmployee"
                     }
                   },
-                  "Property": "AgeBins"
+                  "Property": "Ethnicity"
                 }
               },
-              "queryRef": "DimEmployee.AgeBins",
-              "nativeQueryRef": "AgeBins",
+              "queryRef": "DimEmployee.Ethnicity",
+              "nativeQueryRef": "Ethnicity",
               "active": true
-            }
-          ]
-        },
-        "Series": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "DimEmployee"
-                    }
-                  },
-                  "Property": "Gender"
-                }
-              },
-              "queryRef": "DimEmployee.Gender",
-              "nativeQueryRef": "Gender"
             }
           ]
         },
@@ -67,24 +49,43 @@
               "nativeQueryRef": "TotalEmployees"
             }
           ]
+        },
+        "Y2": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "AverageSalary"
+                }
+              },
+              "queryRef": "_Measures.AverageSalary",
+              "nativeQueryRef": "AverageSalary"
+            }
+          ]
         }
       },
       "sortDefinition": {
         "sort": [
           {
             "field": {
-              "Column": {
+              "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "DimEmployee"
+                    "Entity": "_Measures"
                   }
                 },
-                "Property": "AgeBins"
+                "Property": "TotalEmployees"
               }
             },
-            "direction": "Ascending"
+            "direction": "Descending"
           }
-        ]
+        ],
+        "isDefaultSort": true
       }
     },
     "visualContainerObjects": {
@@ -94,7 +95,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Employees by Age and Gender'"
+                  "Value": "'Employees by Ethnicity and Average Salary'"
                 }
               }
             }
@@ -107,7 +108,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "174efb48a7c1d0af4f50",
+        "name": "5fef81d317fccf841e08",
         "field": {
           "Column": {
             "Expression": {
@@ -115,13 +116,27 @@
                 "Entity": "DimEmployee"
               }
             },
-            "Property": "AgeBins"
+            "Property": "Ethnicity"
           }
         },
         "type": "Categorical"
       },
       {
-        "name": "c206603f8c6f5a5acf66",
+        "name": "4cb1ff9cf6cd8c73543f",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "AverageSalary"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ce6555e012e5945e12bc",
         "field": {
           "Measure": {
             "Expression": {
@@ -133,20 +148,6 @@
           }
         },
         "type": "Advanced"
-      },
-      {
-        "name": "ed511e4244e6602292e4",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "DimEmployee"
-              }
-            },
-            "Property": "Gender"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }

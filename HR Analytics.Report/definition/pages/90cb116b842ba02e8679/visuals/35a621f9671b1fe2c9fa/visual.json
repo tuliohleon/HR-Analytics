@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "35a621f9671b1fe2c9fa",
   "position": {
-    "x": 0,
-    "y": 83.856613102595787,
+    "x": 140,
+    "y": 0,
     "z": 1,
-    "height": 85.438813349814581,
-    "width": 148.72682323856611,
+    "height": 86.666666666666671,
+    "width": 148.33333333333334,
     "tabOrder": 1
   },
   "visual": {
@@ -52,5 +52,23 @@
       }
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "127b8c52cdf5324b873a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Youngest Employee"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
