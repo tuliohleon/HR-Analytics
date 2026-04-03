@@ -1,0 +1,52 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "b13444f858a0177784a9",
+  "position": {
+    "x": 467.551867219917,
+    "y": 522.8215767634855,
+    "z": 10,
+    "height": 143.40248962655602,
+    "width": 219.58506224066392,
+    "tabOrder": 10
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimSatisfiedLevel"
+                    }
+                  },
+                  "Property": "SatisfactionID"
+                }
+              },
+              "queryRef": "DimSatisfiedLevel.SatisfactionID",
+              "nativeQueryRef": "SatisfactionID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimSatisfiedLevel"
+                    }
+                  },
+                  "Property": "SatisfactionLevel"
+                }
+              },
+              "queryRef": "DimSatisfiedLevel.SatisfactionLevel",
+              "nativeQueryRef": "SatisfactionLevel"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "70571567c17c43a0f35d",
+  "position": {
+    "x": 860.41493775933611,
+    "y": 522.8215767634855,
+    "z": 11,
+    "height": 149.37759336099586,
+    "width": 225.56016597510376,
+    "tabOrder": 11
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimRatingLevel"
+                    }
+                  },
+                  "Property": "RatingID"
+                }
+              },
+              "queryRef": "DimRatingLevel.RatingID",
+              "nativeQueryRef": "RatingID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimRatingLevel"
+                    }
+                  },
+                  "Property": "RatingLevel"
+                }
+              },
+              "queryRef": "DimRatingLevel.RatingLevel",
+              "nativeQueryRef": "RatingLevel"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
