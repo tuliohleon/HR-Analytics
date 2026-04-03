@@ -101,7 +101,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'Adan Fradgley'"
+                                "Value": "'Estelle Chung'"
                               }
                             }
                           ]
@@ -117,6 +117,44 @@
                 "Literal": {
                   "Value": "true"
                 }
+              }
+            },
+            "selfFilter": {
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "d",
+                    "Entity": "DimEmployee",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "Contains": {
+                        "Left": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "d"
+                              }
+                            },
+                            "Property": "FullName"
+                          }
+                        },
+                        "Right": {
+                          "Literal": {
+                            "Value": "'estell'"
+                          }
+                        }
+                      }
+                    },
+                    "Annotations": {
+                      "PowerBI.MParameterBehavior": 1
+                    }
+                  }
+                ]
               }
             }
           }
