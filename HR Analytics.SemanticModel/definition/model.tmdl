@@ -10,7 +10,7 @@ annotation __PBI_TimeIntelligenceEnabled = 1
 
 annotation PBI_QueryOrder = ["DimEducationLevel","DimEmployee","FactPerformanceRating","DimRatingLevel","DimSatisfiedLevel"]
 
-annotation PBI_ProTooling = ["DevMode"]
+annotation PBI_ProTooling = ["DevMode","TMDL-Extension"]
 
 ref table DimEducationLevel
 ref table DimEmployee

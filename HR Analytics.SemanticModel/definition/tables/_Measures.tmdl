@@ -33,6 +33,26 @@ table _Measures
 		formatString: \$#,0;(\$#,0);\$#,0
 		lineageTag: 9b9d1c4d-25e2-41c8-9d94-5e33594ae995
 
+	measure LastReviewDate =
+			IF (
+			    MAX ( FactPerformanceRating[ReviewDate] ) = BLANK (),
+			    "No Review Yet",
+			    FORMAT(MAX ( FactPerformanceRating[ReviewDate] ), "mm/dd/yyyy" ))
+		lineageTag: 35ca1aac-6f36-4e10-ad2c-248da6237628
+
+	measure NextReviewDate = ```
+			
+						VAR LastReview = MAX ( FactPerformanceRating[ReviewDate] )
+						VAR HireDate = MAX ( DimEmployee[HireDate] )
+						RETURN
+							IF (
+								NOT ISBLANK ( LastReview ),
+								FORMAT ( LastReview + 365, "MM/dd/yyyy" ),
+								FORMAT ( HireDate + 365, "MM/dd/yyyy" )
+							)
+			```
+		lineageTag: e82ecf63-ed75-488b-be36-e1bef9101672
+
 	column Column
 		formatString: 0
 		lineageTag: 21e298f0-3dfb-474d-bcde-082c73fd4470
