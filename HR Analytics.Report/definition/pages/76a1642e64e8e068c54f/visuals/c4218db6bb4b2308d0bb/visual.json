@@ -2,36 +2,18 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "c4218db6bb4b2308d0bb",
   "position": {
-    "x": 289.79253112033194,
-    "y": 0,
+    "x": 0,
+    "y": 120.94488188976378,
     "z": 1,
-    "height": 280.82987551867222,
-    "width": 279.33609958506224,
+    "height": 290.60367454068239,
+    "width": 640,
     "tabOrder": 1
   },
   "visual": {
-    "visualType": "treemap",
+    "visualType": "columnChart",
     "query": {
       "queryState": {
-        "Details": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "DimEmployee"
-                    }
-                  },
-                  "Property": "JobRole"
-                }
-              },
-              "queryRef": "DimEmployee.JobRole",
-              "nativeQueryRef": "JobRole"
-            }
-          ]
-        },
-        "Group": {
+        "Category": {
           "projections": [
             {
               "field": {
@@ -47,10 +29,25 @@
               "queryRef": "DimEmployee.Department",
               "nativeQueryRef": "Department",
               "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimEmployee"
+                    }
+                  },
+                  "Property": "JobRole"
+                }
+              },
+              "queryRef": "DimEmployee.JobRole",
+              "nativeQueryRef": "JobRole",
+              "active": true
             }
           ]
         },
-        "Values": {
+        "Y": {
           "projections": [
             {
               "field": {
@@ -68,8 +65,71 @@
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "_Measures"
+                  }
+                },
+                "Property": "% Attrition Rate"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
       }
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "0a3877238bd8cb799765",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DimEmployee"
+              }
+            },
+            "Property": "Department"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "4e89ee3373a0352ed13d",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "% Attrition Rate"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a89acb42822696b98b5b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DimEmployee"
+              }
+            },
+            "Property": "JobRole"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

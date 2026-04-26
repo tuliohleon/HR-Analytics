@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "8dec70e1dfe7246f7746",
   "position": {
-    "x": 10.45643153526971,
-    "y": 289.79253112033194,
+    "x": 0,
+    "y": 428.34645669291336,
     "z": 2,
-    "height": 277.84232365145232,
-    "width": 942.57261410788385,
+    "height": 292.28346456692913,
+    "width": 640,
     "tabOrder": 2
   },
   "visual": {
@@ -108,5 +108,48 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e50c261a0cc0c80a738e",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "PropertyVariationSource": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "DimDate"
+                      }
+                    },
+                    "Name": "Variation",
+                    "Property": "Date"
+                  }
+                },
+                "Hierarchy": "Date Hierarchy"
+              }
+            },
+            "Level": "Year"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1cfc90b8ee562c9a76c9",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "% Attrition Rate Date"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

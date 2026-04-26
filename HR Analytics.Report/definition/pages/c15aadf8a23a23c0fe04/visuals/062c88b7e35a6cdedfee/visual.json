@@ -3,10 +3,10 @@
   "name": "062c88b7e35a6cdedfee",
   "position": {
     "x": 0,
-    "y": 411.54855643044618,
+    "y": 280,
     "z": 2,
-    "height": 151.18110236220471,
-    "width": 371.23359580052494,
+    "height": 104,
+    "width": 231,
     "tabOrder": 2
   },
   "visual": {
@@ -37,20 +37,6 @@
       "title": [
         {
           "properties": {
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Last Review'"
-                }
-              }
-            },
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
             "titleWrap": {
               "expr": {
                 "Literal": {
@@ -58,22 +44,6 @@
                 }
               }
             }
-          }
-        }
-      ],
-      "spacing": [
-        {
-          "properties": {
-            "verticalSpacing": {
-              "expr": {
-                "Literal": {
-                  "Value": "2D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "id": "default"
           }
         }
       ],
