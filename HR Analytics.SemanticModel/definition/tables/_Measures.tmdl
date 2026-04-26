@@ -66,6 +66,14 @@ table _Measures
 	measure WorkLifeBalance = CALCULATE(MAX(FactPerformanceRating[WorkLifeBalance]), USERELATIONSHIP(FactPerformanceRating[WorkLifeBalance], DimSatisfiedLevel[SatisfactionID]))
 		lineageTag: c3d4e5f6-g7h8-9012-cdef-345678901234
 
+	measure InactiveEmployeesDate = CALCULATE([InactiveEmployees],USERELATIONSHIP(DimEmployee[HireDate], DimDate[Date]))
+		formatString: 0
+		lineageTag: 12345678-9abc-def0-1234-567890abcdef
+
+	measure '% Attrition Rate Date' = [InactiveEmployeesDate]/[TotalEmployeesDate]
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		lineageTag: abcdef12-3456-7890-abcd-ef1234567890
+
 	measure SelfRating = CALCULATE(MAX(FactPerformanceRating[SelfRating]), USERELATIONSHIP(FactPerformanceRating[SelfRating], DimRatingLevel[RatingID]))
 		formatString: 0
 		lineageTag: d3e4f5g6-h7i8-9012-cdef-456789012345
